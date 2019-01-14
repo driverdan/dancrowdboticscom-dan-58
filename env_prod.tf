@@ -39,6 +39,21 @@ resource "heroku_pipeline_coupling" "production" {
   stage    = "production"
 }
 
+resource "heroku_build" "production" {
+  app = "${heroku_app.production.id}"
+
+  source = {
+    url = "https://github.com/driverdan/dancrowdboticscom-dan-58/archive/master.tar.gz"
+  }
+}
+
+resource "heroku_formation" "production" {
+  app = "${heroku_app.production.id}"
+  type = "web"
+  quantity = 1
+  size = "${var.dyno_size}"
+}
+
 output "app_id" {
   value = "${heroku_app.production.uuid}"
 }

@@ -5,11 +5,5 @@
   "keywords": ["web", "django"],
   "env": {"DEBUG_COLLECTSTATIC": "1"},
   "addons": ["heroku-postgresql:hobby-dev", "sendgrid:starter"],
-  "scripts": {"postdeploy": "./postdeploy.sh"},
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "hobby"
-    }
-  }
+  "scripts": {"postdeploy": "./postdeploy.sh"}
 }
