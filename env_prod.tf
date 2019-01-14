@@ -5,13 +5,6 @@ resource "heroku_app" "production" {
   stack  = "container"
 }
 
-resource "heroku_formation" "formation_prod" {
-  app = "${heroku_app.production.id}"
-  type = "web"
-  quantity = 1
-  size = "${var.dyno_size}"
-}
-
 resource "heroku_addon" "database_production" {
   app  = "${heroku_app.production.id}"
   plan = "heroku-postgresql:hobby-dev"

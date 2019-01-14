@@ -1,1 +1,15 @@
-{"name": "dynosize-1", "description": "test This django application was built with Crowdbotics www.crowdbotics.com", "repository": "https://github.com/driverdan/dancrowdboticscom-dan-58", "keywords": ["web", "django"], "env": {"DEBUG_COLLECTSTATIC": "1"}, "addons": ["heroku-postgresql:hobby-dev", "sendgrid:starter"], "scripts": {"postdeploy": "./postdeploy.sh"}}
+{
+  "name": "dynosize-1",
+  "description": "test This django application was built with Crowdbotics www.crowdbotics.com",
+  "repository": "https://github.com/driverdan/dancrowdboticscom-dan-58",
+  "keywords": ["web", "django"],
+  "env": {"DEBUG_COLLECTSTATIC": "1"},
+  "addons": ["heroku-postgresql:hobby-dev", "sendgrid:starter"],
+  "scripts": {"postdeploy": "./postdeploy.sh"},
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  }
+}
